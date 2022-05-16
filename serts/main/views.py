@@ -1,6 +1,5 @@
 from django.shortcuts import render
-# from django.http import HttpResponse
-# Create your views here.
+from .models import Diamonds4c
 
 
 def index(request):
@@ -9,3 +8,8 @@ def index(request):
 
 def about(request):
     return render(request, 'main/about.html')
+
+
+def sertif(request):
+    diam = Diamonds4c.objects.order_by('-id')[:1]
+    return render(request, 'main/sertif.html', {'diam':diam})
