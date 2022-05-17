@@ -1,20 +1,19 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-  Сертификат соответствия бриллианта
+Ручной ввод для поиска сертификата
 
 {% endblock %}
 
 {% block content %}
- г. Якутск <br> ул. Кирова  12
 
- {% for el in diam %}
+  Сертификатов в базе сейчас:
+
+
  <div class="alert alert-warning mt-2">
-     Сертифицированный бриллиант {{el}}
+     ВСЕГО  {{lensert}}
 
  </div>
-Огранка  {{ el.ogr}} <br>
-Характеристики  {{ el.col }} / {{el.cla}} <br>
-Параметр огранки  {{ el.cut }} <br>
- {% endfor %}
+
+<button type="button" class="w-100 btn btn-lg btn-primary">Начнем ввод данных о бриллианте</button>
 {% endblock %}

@@ -11,11 +11,12 @@ def about(request):
 
 
 def sertifpar(request,sertid):
-    diam = Diamonds4c.objects.order_by('id')[:sertid]
+    diam = Diamonds4c.objects.filter(pk=sertid)
+
     return render(request, 'main/sertif.html', {'diam':diam})
 
 
 def sertif(request):
-    diam = Diamonds4c.objects.order_by('-id')
-    return render(request, 'main/sertif.html', {'diam':diam})
+    lensert = len(Diamonds4c.objects.all())
+    return render(request, 'main/sertif0.html', {'lensert': lensert})
 
