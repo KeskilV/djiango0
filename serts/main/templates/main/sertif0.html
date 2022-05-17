@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  Сертификат соответствия бриллианта
+
+{% endblock %}
+
+{% block content %}
+ г. Якутск <br> ул. Кирова  12
+
+ {% for el in diam %}
+ <div class="alert alert-warning mt-2">
+     Сертифицированный бриллиант {{el}}
+
+ </div>
+Огранка  {{ el.ogr}} <br>
+Характеристики  {{ el.col }} / {{el.cla}} <br>
+Параметр огранки  {{ el.cut }} <br>
+ {% endfor %}
+{% endblock %}

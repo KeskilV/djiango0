@@ -10,6 +10,12 @@ def about(request):
     return render(request, 'main/about.html')
 
 
-def sertif(request):
-    diam = Diamonds4c.objects.order_by('-id')[:1]
+def sertifpar(request,sertid):
+    diam = Diamonds4c.objects.order_by('id')[:sertid]
     return render(request, 'main/sertif.html', {'diam':diam})
+
+
+def sertif(request):
+    diam = Diamonds4c.objects.order_by('-id')
+    return render(request, 'main/sertif.html', {'diam':diam})
+
