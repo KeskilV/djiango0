@@ -12,6 +12,11 @@ def about(request):
 
 def sertifpar(request,sertid):
     diam = Diamonds4c.objects.get(pk=sertid)
+    context = {'diam': diam}
+    return render(request, 'main/sertif.html', context=context)
+
+def sertifpar0(request,sertid):
+    diam = Diamonds4c.objects.get(pk=sertid)
 
     return render(request, 'main/sertif.html', {'diam':diam})
 
