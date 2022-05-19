@@ -4,12 +4,12 @@
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
          <span class="fs-4">ООО Якутский гемцентр</span>
       </a>
-
+{% block mainmenu %}
+    {% for m in mainmenu %}
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'home' %}">Главная</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'about' %}">Наша миссия</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'sert' %}">Сертификат соответствия</a>
-
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url m.url_name %}">{{m.title}}</a>
+    {% endfor %}
+{% endblock mainmenu %}
       </nav>
     </div>
 
