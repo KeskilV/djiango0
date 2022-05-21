@@ -23,26 +23,6 @@ def about(request):
     return render(request, 'main/about.html', context=context)
 
 
-def searchsert(request):
-    lensert = len(Diamonds4c.objects.all())
-    mainmenu = [{'title': 'тест', 'url_name': 'test'},
-           ]
-    context = {'lensert': lensert,
-               'mainmenu': mainmenu,
-               'title': 'поиск сертификата'}
-    return render(request, 'main/searchsert.html', context=context)
-
-
-def sertifpar(request,sertid):
-    diam = Diamonds4c.objects.get(pk=sertid)
-    context = {'diam': diam}
-    return render(request, 'main/sertif.html', context=context)
-
-
-def sertifpar0(request,sertid):
-    diam = Diamonds4c.objects.get(pk=sertid)
-
-    return render(request, 'main/sertif.html', {'diam':diam})
 
 
 
