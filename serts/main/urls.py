@@ -5,6 +5,6 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('about-us', views.about, name='about'),
     path('searhcsert', views.searchsert, name='searchsert'),
-    path('sertif/<int:sertid>/', views.sertifpar, name='sertpar'),
-    path('test', views.test, name='test'),
+    path('main/sertif/<int:sertid>/', views.sertifpar, name='sertpar'),
+    path('main/test', views.test, name='test')
 ]
