@@ -31,15 +31,24 @@ new_names = ['id_1', 'kod_t', 'part', 'kod_r', 'nsert', 'dsert', 'ogr', 'shape',
 d = dict()
 for i,x in enumerate(names):
     d[x] = new_names[i]
-
-for i,n in enumerate(names):
+'''
+for i, n in enumerate(names):
     print("    {} = models.{}('{}'{})".format(
         new_names[i], helper_models(str(types[i])), n,
         ', max_length=' if  helper_models(str(types[i])) == 'CharField' else ''))
+'''
 df.rename(columns=d, inplace=True)
-df['carat'] = round(df['carat'],3)
-df.head().to_csv(filecsv.split('.')[0]+'conv.csv', encoding='cp1251')
+flcols=[]
+for i,n in enumerate(names):
+    if helper_models(str(types[i])) == 'FloatField':
+        flcols.append(new_names[i])
+flcols.remove('flour')
+flcols.remove('diamdev')
+for c in flcols:
+    df[c]=round(df[c],3)
 
+df.to_csv(filecsv.split('.')[0]+'conv.csv', encoding='cp1251')
+print ('saved: ', filecsv.split('.')[0]+'conv.csv')
 #df.columns
 
 '''
