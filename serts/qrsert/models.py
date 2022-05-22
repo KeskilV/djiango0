@@ -54,10 +54,10 @@ class SertDiamonds(models.Model):
         verbose_name_plural = 'Сертификаты'
 
     def get_absolut_url(self):
+        print(reverse('pathsertslug', kwargs={'var_sert_slug': self.slug}))
         return reverse('pathsertslug', kwargs={'var_sert_slug': self.slug})
 
- #   def get_absolut_url(self):
- #       return reverse('pathsertslug', kwargs={'slug:var_sert_slug': self.slug})
+
 
 class SertDiamonds1(models.Model):
     id_1 = models.IntegerField('id_1')

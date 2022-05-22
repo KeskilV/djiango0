@@ -7,7 +7,7 @@ def test(request):
 
 def searchsert(request):
     lensert = len(SertDiamonds.objects.all())
-    mainmenu = [{'title': 'тест', 'url_name': 'test'},
+    mainmenu = [{'title': 'тест', 'url_name': 'test2'},
            ]
     context = {'lensert': lensert,
                'mainmenu': mainmenu,
