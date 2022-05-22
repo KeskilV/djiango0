@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class SertDiamonds1(models.Model):
@@ -42,10 +43,13 @@ class SertDiamonds1(models.Model):
     res = models.CharField('res', max_length=10)
 
     def __str__(self):
-        return self.nsert+ str(self.pcs) + self.ogr + "-" + self.col_r + '/' + self.cla_r + \
-               '/ ' + self.po_r + '-' + str(round(self.carat, 2))
+        return self.nsert+'  '+str(self.pcs) + '  ' + self.ogr + "  " + self.col_r + '/' + self.cla_r + \
+               ' ' + self.po_r + '  ' + str(round(self.carat, 2))
 
     class Meta:
         verbose_name = 'Сертификат'
         verbose_name_plural = 'Сертификаты'
+
+    def get_absolut_url(self):
+        return reverse('sertpar', kwargs={'id_1':self.pk})
 

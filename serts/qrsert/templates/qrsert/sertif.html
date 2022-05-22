@@ -6,15 +6,28 @@
 {% endblock %}
 
 {% block content %}
- г. Якутск <br> ул. Кирова 12
+{{diam.nsert}}               от  {{diam.dsert}} <br>
+г. Якутск  ул. Кирова 12  <td>      ООО "Якутский гемцентр"     </td>   <br>
+сертифицированный бриллиант {{diam}}  <br>
+
 
 
  <div class="alert alert-warning mt-2">
-     Сертифицированный бриллиант {{diam}}
+
+Номер сертификата  {{diam.nsert}}  <br>
+Дата сертификата   {{diam.dsert}}  <br>
+     <br>
+Количество         {{diam.pcs}} шт.<br>
+Масса              {{diam.carat}} карат<br>
+Огранка            {{diam.ogr}} <br>
+Цвет               {{ diam.col_r }} <br>
+Чистота            {{diam.cla_r}} <br>
+Параметр огранки   {{ diam.po_r }} <br>
+Диаметр            {{ diam.diametr }} мм. <br>
+
 
  </div>
-Огранка  {{diam.ogr}} <br>
-Характеристики  {{ diam.col }} / {{el.cla}} <br>
-Параметр огранки  {{ diam.cut }} <br>
-
+Руководитель Органа сертификации        К.Т. Васильев
+<br>
+{{diam.get_absolute_url}}
 {% endblock %}

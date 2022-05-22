@@ -14,10 +14,13 @@ def searchsert(request):
                'title': 'поиск сертификата'}
     return render(request, 'qrsert/searchsert.html', context=context)
 
-def sertifpar(request,sertid):
+def sertifpar(request, sertid):
     diam = SertDiamonds1.objects.get(pk=sertid)
     context = {'diam': diam}
     return render(request, 'qrsert/sertif.html', context=context)
 
-
+def nsert(request, nsert):
+    sert = SertDiamonds1.objects.get(nsert=nsert)
+    context = {'diam': diam}
+    return render(request, 'qrsert/nsert.html', context=context)
 
