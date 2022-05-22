@@ -6,5 +6,5 @@ urlpatterns = [
     path('test', views.test, name='qr sert - test'),
     path('searhcsert', views.searchsert, name='searchsert'),
     path('sertif/<int:sertid>/', views.sertifpar, name='sertpar'),
-    path('nsert/<nsert>/', views.nsert, name='nsert'),
+    path('show_sert/<slug:var_sert_slag>/', views.show_sert, name='pathsertslug'),
 ]

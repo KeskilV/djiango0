@@ -46,9 +46,9 @@ flcols.remove('flour')
 flcols.remove('diamdev')
 for c in flcols:
     df[c]=round(df[c],3)
-
-df.to_csv(filecsv.split('.')[0]+'conv.csv', encoding='cp1251')
-print ('saved: ', filecsv.split('.')[0]+'conv.csv')
+df['slag'] = df.kod_r+df.nsert
+df.to_csv(filecsv.split('.')[0]+'slag_conv.csv', encoding='cp1251')
+print ('saved: ', filecsv.split('.')[0]+'slag_conv.csv')
 #df.columns
 
 '''
