@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-
+{% load qr_code %}
 {% block title %}
   Сертификат соответствия бриллианта
 
@@ -25,10 +25,11 @@
 Параметр огранки   {{ diam.po_r }} <br>
 Диаметр            {{ diam.diametr }} мм. <br>
 
-
+https://ygemlab/
  </div>
 Руководитель Органа сертификации        К.Т. Васильев
 <br>
-slug {{diam.slag}}
+slug {{diam.slag}} <br>
+{% qr_from_text diam.slag size=10 %} <br>
 <a href="#" > переход по слагу </a>
    {% endblock %}

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
-    'qrsert.apps.QrsertConfig'
+    'qrsert.apps.QrsertConfig',
+    'qr_code',
 ]
 
 MIDDLEWARE = [
