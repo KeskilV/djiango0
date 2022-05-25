@@ -2,6 +2,16 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import SertDiamonds1,SertDiamonds
 
+def vkl(request, print):
+    diam = SertDiamonds1.objects.filter(print=print)
+    slug = []
+    for s in diam:
+        slug.append(s.nsert)
+    context = {'diam': diam,
+               'slug': slug}
+    return render(request, 'qrsert/vkl.html', context=context)
+
+
 def test(request):
     return HttpResponse('test -- qrset')
 

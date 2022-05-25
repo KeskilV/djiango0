@@ -1,0 +1,17 @@
+
+{% load qr_code %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% for s in diam %}
+ <div class="container" >
+ ЯКУТСКИЙ ГЕММОЛОГИЧЕСКИЙ ЦЕНТР <br>
+        gemlab@mail.ru <br>
+
+{% qr_from_text s.nsert size=8 border=1 %} <br> ygemlab.ru/s/{{ s.kod_t }}-{{s.carat}}c{{s.kod_r}}{{s.nsert}}<br>
+     </div>
+<br>
+ {% endfor %}
+   {% endblock %}
