@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import SertDiamonds1, SertDiamonds
+from .models import SertDiamonds
 
-admin.site.register(SertDiamonds1)
 admin.site.register(SertDiamonds)

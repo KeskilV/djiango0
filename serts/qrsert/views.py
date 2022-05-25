@@ -1,14 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import SertDiamonds1,SertDiamonds
+from .models import SertDiamonds
 
-def vkl(request, print):
-    diam = SertDiamonds1.objects.filter(print=print)
-    slug = []
-    for s in diam:
-        slug.append(s.nsert)
+def vkl(request, part, print):
+    diam = SertDiamonds.objects.filter(part=part).filter(print=print)
     context = {'diam': diam,
-               'slug': slug}
+               }
     return render(request, 'qrsert/vkl.html', context=context)
 
 
@@ -30,9 +27,8 @@ def sertifpar(request, sertid):
     context = {'diam': diam}
     return render(request, 'qrsert/sertif.html', context=context)
 
-def show_sert(request, var_sert_slag):
-    print('var_sert_slug_print:', var_sert_slag)
-    diam = get_object_or_404(SertDiamonds, slag=var_sert_slag)
+def show_sert(request, var_sert_slug):
+    diam = get_object_or_404(SertDiamonds, slug=var_sert_slug)
     context = {'diam': diam}
     return render(request, 'qrsert/sertif.html', context=context)
 
