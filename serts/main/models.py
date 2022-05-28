@@ -17,3 +17,11 @@ class Diamonds4c(models.Model):
         verbose_name_plural = 'Сертифицированные бриллианты'
 
 
+class Content(models.Model):
+    title = models.CharField('Название статьи', max_length=50)
+    text = models.TextField('Текст')
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = 'Content'
+        verbose_name_plural = 'Contents'
