@@ -32,15 +32,9 @@ https://ygemlab/
 Руководитель Органа сертификации        К.Т. Васильев
 <br>
 slug {{diam.slug}} <br>
-{% qr_from_text ygemlab size=10 %} <br>
+{% qr_from_text "ygemlab.ru/s/"|add:diam.slug size=10 %} <br>
 <a href="#" > переход по слагу </a>
-{{ygemlab}}
-
-{% qr_from_text "ygemlab.ru/s/6-88O99FYGL145818" size=10 %} <br>
 {% for i in '0123456789'|make_list %}
 {{i}}
-454544
 {% endfor %}
-
-
-   {% endblock %}
+{% endblock %}
