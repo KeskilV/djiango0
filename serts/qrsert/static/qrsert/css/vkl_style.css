@@ -54,7 +54,21 @@ h2 {
 }
 
 p {
-    font-size: 2.7mm;
+    font-size: 2mm;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.slug {
+    font-size: 2mm;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+.kod {
+    font-size: 2.5mm;
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 3mm;
 }
