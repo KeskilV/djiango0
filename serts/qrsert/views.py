@@ -6,7 +6,7 @@ def vkl(request, part, print):
     diam = SertDiamonds.objects.filter(part=part).filter(print=print)
     context = {'diam': diam,
                }
-    return render(request, 'qrsert/vkl.html', context=context)
+    return render(request, 'qrsert/vkl_a.html', context=context)
 
 def vkl_a(request):#, part, print):
     #diam = SertDiamonds.objects.filter(part=part).filter(print=print)
