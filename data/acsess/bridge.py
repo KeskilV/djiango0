@@ -1,59 +1,89 @@
+# new bridge
 import pandas as pd
 import sys
-#import numpy as np
 
 
-def helper_models(x):
-    mytypes = ['float', 'int', 'str']
-    mydict = {'float': 'FloatField',
-              'int': 'IntegerField',
-              'str': 'CharField'}
-    for mt in mytypes:
-        if x.__contains__(mt):
-            return mydict[mt]
+# import numpy as np
 
-if len(sys.argv) == 2:
-    filecsv = sys.argv[1]
-else:
-    filecsv = 'for_site0.csv'
-df = pd.read_csv(filecsv, sep=';', encoding='cp1251')
-print('ok', len(df))
-df['col_gia'] = None
-df['cla_gia'] = None
-df['cut_gia'] = None
-df['res'] = None
-names = list(df.columns)
-types = [type(df.iloc[0,i]) for i in range(len(names))]
-new_names = ['id_1', 'kod_t', 'part', 'kod_r', 'nsert', 'dsert', 'ogr', 'shape', 'DiametrMin', 'DiametrMax',
- 'sizes', 'obshmass', 'carat', 'psc', 'col_r', 'cla_r', 'po_r', 'flour', 'comment', 'TotalDepth',
- 'diametr', 'PavilDepth', 'PavilAngle', 'CrownHeight', 'CrownAngle', 'TableSize', 'Girdle_max',
- 'Girdle_min', 'CuletSize', 'print', 'diamdev', 'Weight', 'kod', 'mras', 'col_gia', 'cla_gia', 'cut_gia', 'res']
-d = dict()
-for i,x in enumerate(names):
-    d[x] = new_names[i]
-'''
-for i, n in enumerate(names):
-    print("    {} = models.{}('{}'{})".format(
-        new_names[i], helper_models(str(types[i])), n,
-        ', max_length=' if  helper_models(str(types[i])) == 'CharField' else ''))
-'''
-df.rename(columns=d, inplace=True)
-flcols=[]
-for i,n in enumerate(names):
-    if helper_models(str(types[i])) == 'FloatField':
-        flcols.append(new_names[i])
-flcols.remove('flour')
-flcols.remove('diamdev')
-for c in flcols:
-    df[c]=round(df[c],3)
-df['slug'] = df.kod_t.astype('str')+'-'+df.kod_r+df.nsert #df.carat.astype('str')+'c'+
-df.to_csv(filecsv.split('.')[0]+'slug_conv.csv', encoding='cp1251')
-print ('saved: ', filecsv.split('.')[0]+'slug_conv.csv')
-#df.columns
+def test_col(df, key):
+    '''
+    key=0 enter after acsess q
+    key=1 output for SQLite and MySQL
+    '''
+    if key == 0:
+        test_columns = ['id', 'id_11', 'kod_t', 'part', 'kod_r', 'nsert', 'dsert', 'ogr',
+                        'shape', 'DiametrMin', 'DiametrMax', 'sizes', 'obshmass', 'carat',
+                        'pcs', 'col_r', 'cla_r', 'po_r', 'flour', 'comment', 'TotalDepth',
+                        'diametr', 'PavilDepth', 'PavilAngle', 'CrownHeight', 'CrownAngle',
+                        'TableSize', 'Girdle_max', 'Girdle_min', 'CuletSize', 'print',
+                        'diamdev', 'Weight', 'kod', 'mras', 'col_gia', 'cla_gia', 'cut_gia',
+                        'res', 'slug']
+    else:
+        test_columns = ['id', 'id_1', 'kod_t', 'part', 'kod_r', 'nsert', 'dsert', 'ogr',
+                        'shape', 'DiametrMin', 'DiametrMax', 'sizes', 'obshmass', 'carat',
+                        'pcs', 'col_r', 'cla_r', 'po_r', 'flour', 'comment', 'TotalDepth',
+                        'diametr', 'PavilDepth', 'PavilAngle', 'CrownHeight', 'CrownAngle',
+                        'TableSize', 'Girdle_max', 'Girdle_min', 'CuletSize', 'print',
+                        'diamdev', 'Weight', 'kod', 'mras', 'col_gia', 'cla_gia', 'cut_gia',
+                        'res', 'slug']
+    return all(df.columns == test_columns)
 
-'''
-cla = models.CharField('Чистота', max_length=3)
-cut = models.CharField('Параметр огранки', max_length=1)
-carat = models.FloatField('Карат')
-pcs = models.IntegerField('Штук')
-'''
+
+def corr_floats(df):
+    '''
+    formatting floats
+    '''
+    flcols = ['DiametrMin',
+              'DiametrMax',
+              'sizes',
+              'obshmass',
+              'carat',
+              'TotalDepth',
+              'diametr',
+              'PavilDepth',
+              'PavilAngle',
+              'CrownHeight',
+              'CrownAngle',
+              'TableSize',
+              'Girdle_max',
+              'Girdle_min',
+              'CuletSize',
+              'Weight',
+              'kod',
+              'mras']
+    for c in flcols:
+        df[c] = round(df[c], 3)
+    return df
+
+
+def load_df(file_in=False):
+    if len(sys.argv) == 2:
+        file_in = sys.argv[1]
+    else:
+        if not file_in:
+            file_in = input('file for bridge: ')
+    if file_in.split('.')[-1] == 'csv':
+        df = pd.read_csv(file_in, sep=';', encoding='cp1251')
+    else:
+        df = pd.read_excel(file_in)
+    print('ok ', len(df))
+    return df, file_in
+
+
+def save_res(df, file_in):
+    file_out = file_in.split('.')[0] + '_conv8.csv'
+    df.to_csv(file_out, encoding='cp1251', index=False)
+    print('saved: ', resfilename)
+
+
+def main():
+    df, file_in = load_df()
+    print('test columns in ', test_col(df, 0))
+    df = corr_floats(df)
+    # df['slug'] = df.kod_t.astype('str')+'-'+df.kod_r+df.nsert #df.carat.astype('str')+'c'+
+    df.rename(columns={"id_11": "id_1"}, inplace=True)
+    print('test columns out ', test_col(df, 1))
+    save_res(df, file_in)
+
+
+main()
