@@ -40,3 +40,10 @@ def show_sert(request, var_sert_slug):
                'ygemlab': 'ygemlab.ru/s/'}
     return render(request, 'qrsert/sertif.html', context=context)
 
+def show_sert_1(request, var_sert_slug):
+    #diam = SertDiamonds.objects.get(slug=var_sert_slug)
+    diam = get_object_or_404(SertDiamonds, slug=var_sert_slug)
+    context = {'diam': diam,
+               'ygemlab': 'ygemlab.ru/s/'}
+    return render(request, 'qrsert/sertif_1.html', context=context)
+
