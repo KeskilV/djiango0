@@ -1,14 +1,21 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 
 {% block title %}
-{{title}}
+ООО "Якутский геммологический центр"
 {% endblock %}
 
 {% block content %}
-тут инфо
+ <img src="{% static 'qrsert/images/img2016/PLA_YGL.jpg' %}"  height = "600"  alt="YGL700">
 <br>
 <br>
-{{title}}
+<h4>ООО "Якутский геммологический центр"</h4>
+<p>Регистрационный номер органа по сертификации     РОСС RU.З487.ШГ00-01
+<br>
+677000 Республика Саха (Якутия)<br>
+г Якутск, ул.Кирова, 12<br>
+е-mail  gemlab@mail.ru<br>
+</p>
+
 {% endblock %}
 

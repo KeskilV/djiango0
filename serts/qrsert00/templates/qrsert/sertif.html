@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load qr_code %}
+{% block title %}
+  Сертификат соответствия бриллианта
+
+{% endblock %}
+
+{% block content %}
+{% load qr_code %}
+
+{{diam.nsert}}               от  {{diam.dsert}} <br>
+г. Якутск  ул. Кирова 12  <td>      ООО "Якутский гемцентр"     </td>   <br>
+сертифицированный бриллиант {{diam}}  <br>
+
+
+
+ <div class="alert alert-warning mt-2">
+
+Номер сертификата  {{diam.nsert}}  <br>
+Дата сертификата   {{diam.dsert}}  <br>
+     <br>
+Количество         {{diam.pcs}} шт.<br>
+Масса              {{diam.carat}} карат<br>
+Огранка            {{diam.ogr}} <br>
+Цвет               {{ diam.col_r }} <br>
+Чистота            {{diam.cla_r}} <br>
+Параметр огранки   {{ diam.po_r }} <br>
+Диаметр            {{ diam.diametr }} мм. <br>
+
+https://ygemlab/
+ </div>
+Руководитель Органа сертификации        К.Т. Васильев
+<br>
+slug {{diam.slug}} <br>
+{% qr_from_text "ygemlab.ru/s/"|add:diam.slug size=10 %} <br>
+<a href="#" > переход по слагу </a>
+{% for i in '0123456789'|make_list %}
+{{i}}
+{% endfor %}
+{% endblock %}
