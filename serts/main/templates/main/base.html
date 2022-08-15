@@ -4,9 +4,7 @@
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
          <span class="fs-4">ООО Якутский гемцентр</span>
       </a>
-{% load static %}
 {% block mainmenu %}
-     <img src="{% static 'qrsert/images/logoygl.png' %}" width="40" alt="--YGL LOGO">
     {% for m in mainmenu %}
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 text-dark text-decoration-none" href="{% url m.url_name %}">{{m.title}}</a>

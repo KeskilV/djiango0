@@ -1,0 +1,36 @@
+<!-- Тут не помешали бы комментарии :) -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Вкладыши для печати</title>
+     <link rel="stylesheet" href="{% static 'qrsert/css/reset.css' %}">
+     <link rel="stylesheet" href="{% static 'qrsert/css/vkl_style.css' %}">
+</head>
+
+<body>
+     <div class="page">
+
+{% load qr_code %}
+{% block title %} {% endblock %}
+
+{% block content %}
+{% for s in diam %}
+ <div class="vkladish">
+               <h3>ЯКУТСКИЙ ГЕММОЛОГИЧЕСКИЙ ЦЕНТР</h3>
+               <h4>gemlab@mail.ru</h4>
+               <img src="{% static 'qrsert/images/logoygl.png' %}" alt="logo ygl">
+               {% qr_from_text s.slug size=7 border=0.5 %} <br>
+               ygemlab.ru/s/{{ s.slug }}<br>
+ </div>
+ {% endfor %}
+         {% endblock %}
+     </div>
+
+</body>
+
+</html>

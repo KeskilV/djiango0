@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Diamonds4c(models.Model):
 
     ogr = models.CharField('Огранка', max_length=20)
@@ -20,6 +21,9 @@ class Diamonds4c(models.Model):
 class Content(models.Model):
     title = models.CharField('Название статьи', max_length=50)
     text = models.TextField('Текст')
+    is_published = models.BooleanField(default=True)
+    category =  models.CharField('Категория', max_length=50)
+    
     def __str__(self):
         return self.title
     class Meta:
