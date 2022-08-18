@@ -1,5 +1,4 @@
- /* * {
-    qsert
+/* * { for mark
     outline: 1px solid rgb(34, 37, 230);
 } */
 
@@ -23,10 +22,12 @@
     height: 32mm;
     outline: 1px solid rgb(233, 233, 233);
     display: inline-block;
+    background-color: rgba(155, 249, 196, .3);
+
 }
 
 h1 {
-    font-size: 2.3mm;
+    font-size: 3.5mm;
     text-align: center;
     color: blue;
     font-family: Arial, Helvetica, sans-serif;
@@ -37,19 +38,22 @@ h1 {
     font-size: 3.3mm;
     text-align: center;
     color: blue;
+    font-weight: bold
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 1.3mm;
 }
 
 h2 {
-    font-size: 2.5mm;
+    font-size: 2.2mm;
     text-align: center;
+    font-weight: bold
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0.5mm;
+    color: blue;
 }
 
 .logo {
-    width: 18mm;
+    width: 17.5mm;
     height: auto;
     margin-left: 6mm;
     margin-right: 4mm;
@@ -57,7 +61,7 @@ h2 {
 }
 
 .logomark {
-    width: 14mm;
+    width: 17.5mm;
     height: auto;
     margin-left: 6mm;
     margin-right: 4mm;
@@ -67,6 +71,7 @@ h2 {
 .qr-code {
     width: 18mm;
     height: auto;
+    vertical-align: middle
     margin-left: 1mm;
 }
 
@@ -84,14 +89,29 @@ p {
 
 }
 .kod {
-    font-size: 2.5mm;
+    font-size: 1.5mm;
     text-align: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-right: 3mm;
+    position: relative; /* Абсолютное позиционирование */
+       bottom: 15px; /*Положение от нижнего края */
+        right: 7px; /* Положение от правого края */
+        top:  - 20px;
+        line-height: 1px;
 }
 
 .kodm {
     font-size: 1.5mm;
     text-align: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-right: 3mm;}
+    margin-right: 3mm;
+
+    }
+
+ .no-ie {
+  font-size: 3.5mm;
+  text-align: center;
+  -webkit-text-stroke: .7px blue;
+  -webkit-text-fill-color: transparent;
+  margin-top: 3px;
+}
