@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse #, HttpResponseNotFound, Http404
 
-
+#11112222
 mainmenu = [{'title': 'Главная', 'url_name': 'home'},
             {'title': 'Наша миссия', 'url_name': 'about'}]
            
