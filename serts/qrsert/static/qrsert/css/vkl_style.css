@@ -1,29 +1,97 @@
+/* * {
+    outline: 1px solid rgb(34, 37, 230);
+} */
+
+ /*{
+    margin: 0;
+    padding: 0;
+   }
+*/
 .page {
     padding: 5mm;
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
 }
 
 .vkladish {
+    box-sizing: border-box;
+    margin-left: -1mm;
+    margin-top: 0.2mm;
     width: 60mm;
-    height: 30mm;
-    border: 1px solid red;
+    height: 36mm;
+    outline: 1px solid rgb(233, 233, 233);
+    display: inline-block;
 }
 
 h1 {
-    font-size: 3mm;
+    font-size: 2.3mm;
     text-align: center;
     color: blue;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1mm;
+    margin-top: 1.3mm;
+}
+
+.hm1 {
+    font-size: 3.3mm;
+    text-align: center;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1.3mm;
 }
 
 h2 {
-    font-size: 3mm;
+    font-size: 2.5mm;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 1mm;
+    margin-top: 0.5mm;
 }
 
 .logo {
-    width: 30mm;
-    height: 30mm;    
+    width: 18mm;
+    height: auto;
+    margin-left: 6mm;
+    margin-right: 4mm;
+    margin-top: 1mm;
 }
+
+.logomark {
+    width: 14mm;
+    height: auto;
+    margin-left: 6mm;
+    margin-right: 4mm;
+    margin-top: 1mm;
+}
+
+.qr-code {
+    width: 18mm;
+    height: auto;
+    margin-left: 1mm;
+}
+
+p {
+    font-size: 2mm;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.slug {
+    font-size: 2mm;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+.kod {
+    font-size: 2.5mm;
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 3mm;
+}
+
+.kodm {
+    font-size: 1.5mm;
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 3mm;
+}}
