@@ -1,4 +1,5 @@
 venv
 serts/passenger_wsgi.py
-
+.idea
+desktop.ini
 
