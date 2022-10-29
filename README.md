@@ -1,4 +1,4 @@
- # stady djiango
+ # study djiango
 ## https://youtu.be/6K83dgjkQNw
 
 ## requirments.txt
