@@ -9,5 +9,6 @@ urlpatterns = [
     path('s/<slug:var_sert_slug>/', views.show_sert, name='pathsertslug'),
     path('vkl/<int:part>/<int:print>/', views.vkl, name='pathvkl'),
     path('vkl_a', views.vkl_a, name='pathvkl_a'),
-    path('vklmark/<int:part>/<int:print>/', views.vklmark, name='pathvkl'),
+    path('vklmark/<int:part>/<int:print>/', views.vklmark, name='pathvklmark'),
+    path('vklminih/<int:part>/<int:print>/', views.vklminih, name='pathvklminih'),
     ]

@@ -1,0 +1,120 @@
+/* * { for mark
+    outline: 1px solid rgb(34, 37, 230);
+} */
+
+ /*{
+    margin: 0;
+    padding: 0;
+   }
+*/
+.page {
+    padding: 5mm;
+    width: 210mm;
+    height: 297mm;
+    margin: auto;
+}
+
+.vkladish {
+    box-sizing: border-box;
+    margin-left: -1mm;
+    margin-top: 0.2mm;
+    width: 56mm;
+    height: 35mm;
+    outline: 1px solid rgb(233, 233, 233);
+    display: inline-block;
+    background-color: rgba(155, 249, 196, .3);
+
+}
+
+h1 {
+    font-size: 3.5mm;
+    text-align: center;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1.3mm;
+}
+
+.hm1 {
+    font-size: 3.3mm;
+    text-align: center;
+    color: blue;
+    font-weight: bold
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1.3mm;
+}
+
+h2 {
+    font-size: 2.2mm;
+    text-align: center;
+    font-weight: bold
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.5mm;
+    color: blue;
+}
+
+.logo {
+    width: 17.5mm;
+    height: auto;
+    margin-left: 6mm;
+    margin-right: 4mm;
+    margin-top: 1mm;
+}
+
+.logomark {
+    width: 17.5mm;
+    height: auto;
+    margin-left: 6mm;
+    margin-right: 4mm;
+    margin-top: 1mm;
+}
+
+.qr-code {
+    writing-mode: vertical-rl;
+    width: 10mm;
+    height: auto;
+    vertical-align: middle
+    margin-left: 1mm;
+}
+
+p {
+    font-size: 2mm;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.slug {
+
+    transform: rotate (-90deg)
+    font-size: 2mm;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+.kod {
+    font-size: 1.5mm;
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 3mm;
+    position: relative; /* Абсолютное позиционирование */
+       bottom: 15px; /*Положение от нижнего края */
+        right: 7px; /* Положение от правого края */
+        top:  - 20px;
+        line-height: 1px;
+}
+
+.kodm {
+    font-size: 1.5mm;
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 3mm;
+
+    }
+
+ .no-ie {
+  font-size: 3.5mm;
+  text-align: center;
+  -webkit-text-stroke: .7px blue;
+  -webkit-text-fill-color: transparent;
+  margin-top: 3px;
+}

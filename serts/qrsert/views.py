@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import SertDiamonds
 
 def vkl(request, part, print):
+    '''универсальная ЯГЛ'''
     diam = SertDiamonds.objects.filter(part=part).filter(print=print)
     context = {'diam': diam,
                }
@@ -10,10 +11,18 @@ def vkl(request, part, print):
     
     
 def vklmark(request, part, print):
+    '''для Маркова'''
     diam = SertDiamonds.objects.filter(part=part).filter(print=print)
     context = {'diam': diam,
                }
     return render(request, 'qrsert/vklmark.html', context=context)
+
+def vklminih(request, part, print):
+    '''универсальная мини горизонтальная'''
+    diam = SertDiamonds.objects.filter(part=part).filter(print=print)
+    context = {'diam': diam,
+               }
+    return render(request, 'qrsert/vklminih.html', context=context)
 
 
 def vkl_a(request):#, part, print):
