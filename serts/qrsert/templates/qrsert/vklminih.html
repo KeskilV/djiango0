@@ -23,16 +23,17 @@
               <div class="customer_block">
                   <div class="no-ie">ИП МАРКОВ Л.В.
                       <h2>Республика Саха (Якутия) г. Якутск,</h2>
-                      <h2>Вилюйский тр 4 км. тел. +7(924)167-56-57</h2>
+                      <h2>Вилюйский тр 4 км. </h2>
+                      <h2> тел. +7(924)167-56-57</h2>
                   </div>
                   <img class="logo" src="{% static 'qrsert/images/logomark.png' %}" alt="logo mark">
               </div>
               <div class="qr_block">
 
                   {% qr_from_text "ygemlab.ru/s/"|add:s.slug size=3 border=1 %}
-                  <p class="slug">
+                  <div class="slug">
                      ООО "Якутский гемцентр": ygemlab.ru/s/{{ s.slug }}
-                  </p>
+                  </div>
                   <div class="kod">{{s.kod_t}}</div>
                   <!--
 
