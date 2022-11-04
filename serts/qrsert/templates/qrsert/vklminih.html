@@ -20,14 +20,31 @@
  {% block content %}
          {% for s in diam %}
           <div class="vkladish">
-              <div class="no-ie">ИП МАРКОВ Л.В.</div>
-              <h2>Республика Саха (Якутия) г. Якутск,</h2>
-              <h2>Вилюйский тр 4 км. тел. +7(924)167-56-57</h2>
-              <p class="slug"> ygemlab.ru/s/{{ s.slug }}</p>
-               <img class="logo" src="{% static 'qrsert/images/logomark.png' %}" alt="logo mark">
-               {% qr_from_text "ygemlab.ru/s/"|add:s.slug size=3 border=1 %}
+              <div class="customer_block">
+                  <div class="no-ie">ИП МАРКОВ Л.В.
+                      <h2>Республика Саха (Якутия) г. Якутск,</h2>
+                      <h2>Вилюйский тр 4 км. тел. +7(924)167-56-57</h2>
+                  </div>
+                  <img class="logo" src="{% static 'qrsert/images/logomark.png' %}" alt="logo mark">
+              </div>
+              <div class="qr_block">
 
-              <p class="kod">{{s.kod_t}}</p>
+                  {% qr_from_text "ygemlab.ru/s/"|add:s.slug size=3 border=1 %}
+                  <p class="slug">
+                     ООО "Якутский гемцентр": ygemlab.ru/s/{{ s.slug }}
+                  </p>
+                  <div class="kod">{{s.kod_t}}</div>
+                  <!--
+
+
+                  -->
+              </div>
+
+
+
+
+
+
 
           </div>
          {% endfor %}

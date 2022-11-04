@@ -22,9 +22,30 @@
     height: 35mm;
     outline: 1px solid rgb(233, 233, 233);
     display: inline-block;
-    background-color: rgba(155, 249, 196, .3);
+    position:relative;
 
 }
+
+.customer_block{
+    position:relative;
+    outline: 1px solid rgb(233, 233, 233);
+    width:80%;
+    height:100%;
+    background-color: rgba(155, 249, 196, .3);
+    z-index:0;
+}
+
+.qr_block{
+     position:absolute;
+     top:0px;
+     right:0px;
+     /*background-color:#ece89d;*/
+     margin-top:2px;
+     width:19%;
+     height:98%;
+     z-index:2;
+}
+
 
 h1 {
     font-size: 3.5mm;
@@ -38,7 +59,7 @@ h1 {
     font-size: 3.3mm;
     text-align: center;
     color: blue;
-    font-weight: bold
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 1.3mm;
 }
@@ -46,7 +67,7 @@ h1 {
 h2 {
     font-size: 2.2mm;
     text-align: center;
-    font-weight: bold
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0.5mm;
     color: blue;
@@ -55,24 +76,25 @@ h2 {
 .logo {
     width: 17.5mm;
     height: auto;
-    margin-left: 6mm;
-    margin-right: 4mm;
+    margin-left: 12mm;
+    text-align: center;
+    margin-right: 12mm;
     margin-top: 1mm;
 }
 
 .logomark {
     width: 17.5mm;
     height: auto;
+    vertical-align: center;
     margin-left: 6mm;
     margin-right: 4mm;
     margin-top: 1mm;
 }
 
 .qr-code {
-    writing-mode: vertical-rl;
-    width: 10mm;
+    width: 5mm;
     height: auto;
-    vertical-align: middle
+    vertical-align: center;
     margin-left: 1mm;
 }
 
@@ -83,8 +105,11 @@ p {
 
 }
 .slug {
+    position:relative;
+    width:90%;
+    height:65%;
 
-    transform: rotate (-90deg)
+    writing-mode: vertical-rl;
     font-size: 2mm;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -97,9 +122,9 @@ p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-right: 3mm;
     position: relative; /* Абсолютное позиционирование */
-       bottom: 15px; /*Положение от нижнего края */
-        right: 7px; /* Положение от правого края */
-        top:  - 20px;
+       bottom: 2px; /*Положение от нижнего края */
+        right: 2px; /* Положение от правого края */
+        /*top:  - 20px;*/
         line-height: 1px;
 }
 
@@ -114,6 +139,7 @@ p {
  .no-ie {
   font-size: 3.5mm;
   text-align: center;
+  margin:5px;
   -webkit-text-stroke: .7px blue;
   -webkit-text-fill-color: transparent;
   margin-top: 3px;
