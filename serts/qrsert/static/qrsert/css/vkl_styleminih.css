@@ -29,6 +29,7 @@
 .customer_block{
     position:relative;
     outline: 1px solid rgb(233, 233, 233);
+    text-align: center;
     width:80%;
     height:98%;
     background-color: rgba(155, 249, 196, .3);
@@ -141,7 +142,7 @@ p {
  .no-ie {
   font-size: 3.5mm;
   text-align: center;
-  margin:5px;
+  /*margin:5px;*/
   -webkit-text-stroke: .7px blue;
   -webkit-text-fill-color: transparent;
   margin-top: 3px;
