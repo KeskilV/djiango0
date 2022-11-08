@@ -92,6 +92,15 @@ h2 {
     margin-top: 1mm;
 }
 
+.logouruu {
+    width: 45mm;
+    height: auto;
+    vertical-align: center;
+    margin-left: 0mm;
+    margin-right: 0mm;
+    margin-top: 0mm;
+}
+
 .qr-code {
     width: 5mm;
     height: auto;
