@@ -1,0 +1,52 @@
+<!-- Тут не помешали бы комментарии :) -->
+{% load static %}
+{% load qr_code %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Вкладыши для печати</title>
+     <link rel="stylesheet" href="{% static 'qrsert/css/reset.css' %}">
+     <link rel="stylesheet" href="{% static 'qrsert/css/vkl_styleuruu.css' %}">
+
+</head>
+
+<body>
+     <div class="page">
+
+ {% block content %}
+         {% for s in diam %}
+          <div class="vkladish">
+              <div class="customer_block">
+
+
+                  <img class="logouruu" src="{% static 'qrsert/images/uruu_logo8.png' %}" alt="uruu_logo">
+              </div>
+              <div class="qr_block">
+
+                  {% qr_from_text "ygemlab.ru/s/"|add:s.slug size=3 border=1 %}
+                  <div class="slug">
+                     ООО "Якутский гемцентр": ygemlab.ru/s/{{ s.slug }}
+                  </div>
+                  <div class="kod">{{s.kod_t}}</div>
+                  <!--
+
+
+                  -->
+              </div>
+
+
+
+
+
+
+
+          </div>
+         {% endfor %}
+ {% endblock %}
+     </div>
+</body>
+</html>
