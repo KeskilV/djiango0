@@ -31,6 +31,12 @@ def vkluruu(request, part, print):
                }
     return render(request, 'qrsert/vkluruu.html', context=context)
 
+def vklkdm(request, part, print):
+    '''уруу 15 ноября 2022'''
+    diam = SertDiamonds.objects.filter(part=part).filter(print=print)
+    context = {'diam': diam,
+               }
+    return render(request, 'qrsert/vklkdm.html', context=context)
 
 def vkl_a(request):#, part, print):
     #diam = SertDiamonds.objects.filter(part=part).filter(print=print)

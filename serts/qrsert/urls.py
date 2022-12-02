@@ -13,4 +13,5 @@ urlpatterns = [
     path('vklmark/<int:part>/<int:print>/', views.vklmark, name='pathvklmark'),
     path('vklminih/<int:part>/<int:print>/', views.vklminih, name='pathvklminih'),
     path('vkluruu/<int:part>/<int:print>/', views.vkluruu, name='pathvkluruu'),
+    path('vklkdm/<int:part>/<int:print>/', views.vklkdm, name='pathvklkdm'),
     ]
