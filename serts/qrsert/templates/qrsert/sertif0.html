@@ -1,0 +1,179 @@
+<html lang="en">
+    <head>
+        {% load static %}
+        {% load qr_code %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>sert YGL</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+    	<!-- Loader -->
+    	<div class="loader" style="display: none;">
+    		<div class="loader-img" style="display: none;"></div>
+    	</div>
+
+		<!-- Top menu -->
+
+        <!-- Top content -->
+        <div class="top-content" style="position: relative; z-index: 0; background: none;">
+            <div class="inner-bg">
+                <div class="container">
+
+                    <div class="row">
+
+						<div class="alert alert-warning mt-2"> <h4>СЕРТИФИКАТ СООТВЕТСТВИЯ БРИЛЛИАНТА <br> DIAMOND GRADING CERTIFICATE </h4> 
+						 {{diam}} 	</div>    
+						    <div class="row">
+    						    <div class="col-md-4">
+                                    <img src="{% static 'qrsert/images/img2016/YGL700.jpg' %}"  height = "150"  alt="YGL700">
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 color = blue >СИСТЕМА ДОБРОВОЛЬНОЙ СЕРТИФИКАЦИИ “ЯКУТСКАЯ ГЕММОЛОГИЧЕСКАЯ ЛАБОРАТОРИЯ” </h4> <br>
+                                    <h5>регистрационный номер РОСС RU.З487.ШГ00 </h5> 
+                                </div>    
+                            </div>  
+                        
+                                        <div class="col-md-4">
+                                          <img src="{% static 'qrsert/images/logoygl.png' %}" width="40" alt="--YGL LOGO">
+                                             <div> ООО "Якутский гемцентр"<br>
+                                             677000 Республика Саха (Якутия)<br>
+                                                    г Якутск, ул.Кирова, 12<br>
+                                                    е-mail  gemlab@mail.ru</div>
+
+                                            <ul class="list-group">
+                                                Параметры бриллианта
+                                                  <li class="list-group-item"> Глубина павилиона {{diam.PavilDepth}}</li>
+                                                  <li class="list-group-item">Дата сертификата   {{diam.dsert}}  </li>
+                                                  <li class="list-group-item">Количество         {{diam.pcs}} шт.</li>
+                                                  <li class="list-group-item">Масса              {{diam.carat}} карат</li>
+                                                  <li class="list-group-item">Огранка            {{diam.ogr}} </li>
+                                            </ul>
+
+                                            <h2></h2>
+                                          <p></p>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                          <h3></h3>
+                                         
+                                              <ul class="list-group">
+                                                  <li class="list-group-item"> Номер сертификата  {{diam.nsert}}</li>
+                                                  <li class="list-group-item">Дата сертификата   {{diam.dsert}}  </li>
+                                                  <li class="list-group-item">Количество         {{diam.pcs}} шт.</li>
+                                                  <li class="list-group-item">Масса              {{diam.carat}} карат</li>
+                                                  <li class="list-group-item">Огранка            {{diam.ogr}} </li>
+                                                  <li class="list-group-item">Цвет               {{ diam.col_r }}  </li>
+                                                  <li class="list-group-item">Чистота            {{diam.cla_r}}  </li>
+                                                  <li class="list-group-item">Параметр огранки   {{ diam.po_r }} </li>
+                                                  <li class="list-group-item">Диаметр            {{ diam.diametr }} мм. </li>
+                                                  <li class="list-group-item">Заключение: Бриллиант соответствует <br>
+                                                  ТУ 117-4.2099-2002<br>
+                                                  СТП YGL10/001-2008</li>
+                                                </ul>
+                                                
+                                               
+                                                Руководитель Органа сертификации  
+                                                   <img src="{% static 'qrsert/images/stampYGL.gif' %}" width="200" alt="--YGL STAMP">     
+                                                   <br> К.Т. Васильев
+                                          
+                                       </div>
+                                       
+                                       
+                                       <div class="col-md-3">
+                                            <p><small>Упаковка сертифицированного бриллианта защищена уникальной номерной пломбировочной голограммой. После вскрытия упаковки бриллиант подлежит повторному освидетельствованию в Органе сертификации.
+Система добровольной сертификации и знак соответствия охраняются законодательством Российской Федерации. Запрещается частичное или полное копирование сертификата и знака соответствия без письменного разрешения Центрального Органа Системы.
+                                            </small></p>
+                                        </div>
+
+                    </div>
+
+                    <div class="row">
+                          
+                          <div class="col-md-4">____</div>
+                          <div class="col-md-4">____</div>
+                    </div>
+                    	<div class="col-sm-5 ">
+
+
+                            {% qr_from_text "ygemlab.ru/s/"|add:diam.slug size=5 %} <br>
+                            <a href="#" > переход </a>
+                        </div>
+                    <div class="row">
+                        <div class="alert alert-warning mt-2">  </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        <!-- Features -->
+
+
+        <!-- Screenshots -->
+
+
+        <!-- Video -->
+
+
+        <!-- Call to action -->
+
+        <!-- Testimonials -->
+
+
+        <!-- About us -->
+
+        <!-- Subscription form -->
+
+
+        <!-- Contact us -->
+
+
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	            <div class="row">
+                    <div class="col-sm-7 footer-copyright">
+                    	© Якутский геммологический центр by <a href="http://ygemlab.ru">Zren</a>.
+                    </div>
+                    <div class="col-sm-5 footer-social">
+                    	<a class="ultm ultm-facebook ultm-32 ultm-square ultm-color-to-gray" href=""></a>
+	                	<a class="ultm ultm-dribbble ultm-32 ultm-square ultm-color-to-gray" href=""></a>
+	                    <a class="ultm ultm-twitter ultm-32 ultm-square ultm-color-to-gray" href=""></a>
+	                    <a class="ultm ultm-google-plus-1 ultm-32 ultm-square ultm-color-to-gray" href=""></a>
+	                    <a class="ultm ultm-pinterest ultm-32 ultm-square ultm-color-to-gray" href=""></a>
+                    </div>
+	            </div>
+	        </div>
+        </footer>
+
+
+        <!-- Javascript -->
+
+
+        <!--[if lt IE 10]>
+
+        <![endif]-->
+
+
+
+
+
+    </body></html>
